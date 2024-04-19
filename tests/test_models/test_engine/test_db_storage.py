@@ -73,8 +73,8 @@ class TestDBStorage(unittest.TestCase):
 
     def setUp(self):
         """Set up for tests"""
-        storage.close()
         from models import storage
+        storage.close()
 
     def tearDown(self):
         """Tear down"""
