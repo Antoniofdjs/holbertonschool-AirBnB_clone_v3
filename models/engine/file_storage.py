@@ -74,7 +74,6 @@ class FileStorage:
 
     def get(self, cls, id):
         """Retrieve one object"""
-        print(f"Id reaching get: {id}")
         if cls in classes.values() and id:
             key = str(cls.__name__) + "." + id
             if key in self.__objects.keys():
