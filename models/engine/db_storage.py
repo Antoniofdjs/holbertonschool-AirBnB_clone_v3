@@ -84,10 +84,17 @@ class DBStorage:
         If no class is passed, returns the count of all
         objects in storage
         """
-        if cls is not None:
-            return len(self.all(cls))
+        if cls is None:
+            total_objects = 0
+            for cls in classes.values():
+                objs = self.__session.query(cls).all()
+                total_objects += len(objs)
+            return total_objects
+
         else:
-            return len(self.all())
+            if cls in classes.values():
+                objs = self.__session.query(cls).all()
+                return len(objs)
 
     def get(self, cls, id):
         """Retrieve one object"""
