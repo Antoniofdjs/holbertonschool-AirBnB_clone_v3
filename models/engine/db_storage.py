@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# This module contains the class DBStorage for interacting with the MySQL database.
+# This module contains the class DBStorage
+# for interacting with the MySQL database.
 
 import models
 from models.amenity import Amenity
@@ -76,8 +77,10 @@ class DBStorage:
 
     def count(self, cls=None):
         """
-        Method that returns the number of objects in storage matching the given class.
-        If no class is passed, returns the count of all objects in storage
+        Method that returns the number of
+        objects in storage matching the given class.
+        If no class is passed, returns the count of all
+        objects in storage
         """
         if cls is not None:
             return len(self.all(cls))
