@@ -95,7 +95,6 @@ class FileStorage:
                 for key in keys:
                     if str(cls.__name__) in key:
                         total_objs += 1
-                        print(total_objs)
                 return total_objs
 
     def close(self):
