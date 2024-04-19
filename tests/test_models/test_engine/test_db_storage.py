@@ -74,7 +74,8 @@ class TestDBStorage(unittest.TestCase):
     def setUp(self):
         """Set up for tests"""
         models.storage._DBStorage__session.close()
-        models.storage._DBStorage__session = models.storage._DBStorage__session()
+        session = models.storage._DBStorage__session
+        session = models.storage._DBStorage__session()
 
     def tearDown(self):
         """Tear down"""
